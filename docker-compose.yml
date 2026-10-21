@@ -1,0 +1,12 @@
+services:
+  hitl-rrhh:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    environment:
+      HITL_DB_PATH: /app/data/hitl_rrhh.sqlite3
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
